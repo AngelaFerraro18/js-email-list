@@ -14,7 +14,7 @@ for (let i = 0; i < 10; i++) {
             const result = response.data.response;
 
             //inserisco gli elementi li nella variabile vuota
-            emailItems += `<li>${result}</li>`
+            emailItems += `<li>${result} <i class="fa-regular fa-envelope"></i><i class="fa-regular fa-envelope-open"></i></li>`
 
             //inserisco gli elementi li creati nell'ul 
             emailListElement.innerHTML = emailItems;

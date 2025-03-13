@@ -1,3 +1,57 @@
-body {
-    background-color: pink;
+/* Reset */
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    width: 900px;
+    margin: 0 auto;
+}
+
+body{
+    font-family: "Noto Sans", sans-serif;
+}
+
+/* header */
+
+header h1 {
+    text-align: center;
+    background-color: #0daef3;
+    padding: 10px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    color: #fff;
+    border-radius: 5px;
+}
+
+/* main */
+
+main ul{
+    list-style: none;
+    line-height: 2rem;
+}
+
+main ul li{
+    padding: 0 15px;
+}
+
+main ul li i.fa-regular.fa-envelope-open{
+    display: none;
+}
+
+main ul li:hover{
+    background-color: #0daef37d;
+    color: #fff;
+    border-radius: 5px;
+}
+
+main ul li:hover i.fa-regular.fa-envelope-open{
+    display: inline;
+}
+
+main ul li:hover i.fa-regular.fa-envelope{
+    display: none;
 }
