@@ -1,30 +1,27 @@
+//salvo in una variabile l'elemento ul che ospiterà la lista delle email
+const emailListElement = document.getElementById('email-list');
 
-//collegato axios lo uso per richiedere i dati all'API
-axios.get('https://flynn.boolean.careers/exercises/api/random/mail')
-.then(response => {
-    let emailList = [];
-    for (let i = 0; i < 10; i++){
-        const result = response.data.response;
-        emailList.push(result);
-    }
-    console.log(emailList);
+//creo una variabile con una stringa vuota, dove andrò ad aggiungere gli elementi li
+let emailItems = '';
 
-    //salvo in una variabile l'elemento ul che ospiterà la lista delle email
-    const emailListElement = document.getElementById('email-list');
-    console.log(emailListElement);
-    
-    //creo una variabile con una stringa vuota, dove andrò ad aggiungere gli elementi li
-    let emailItems = '';
-    
-    //faccio un ciclo forEach per iterare sull'array creato in precedenza e inserire gli elementi li nella variabile vuota
-    emailList.forEach(email => {
-        emailItems += `<li>${email}</li>`
-    })
-    console.log(emailItems);
+//collegato axios lo uso per richiedere i dati all'API e faccio un ciclo for per generare 10 email randomiche
+for (let i = 0; i < 10; i++) {
 
-    //inserisco gli elementi li creati nell'ul 
-    emailListElement.innerHTML = emailItems;
-}) 
-.catch(error => {
-    console.error (error);
-})
+    axios.get('https://flynn.boolean.careers/exercises/api/random/mail')
+        .then(response => {
+
+            //salvo in una variabile il valore che mi interessa (email)
+            const result = response.data.response;
+
+            //inserisco gli elementi li nella variabile vuota
+            emailItems += `<li>${result}</li>`
+
+            //inserisco gli elementi li creati nell'ul 
+            emailListElement.innerHTML = emailItems;
+
+        })
+        .catch(error => {
+            console.error(error);
+        })
+}
+
