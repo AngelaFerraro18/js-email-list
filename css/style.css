@@ -32,6 +32,7 @@ header h1 {
 main ul{
     list-style: none;
     line-height: 2rem;
+    margin-bottom: 20px;
 }
 
 main ul li{
@@ -54,4 +55,19 @@ main ul li:hover i.fa-regular.fa-envelope-open{
 
 main ul li:hover i.fa-regular.fa-envelope{
     display: none;
+}
+
+body #new-emails{
+    padding: 10px;
+    margin-left: 15px;
+    border: none;
+    outline: 1px solid #0000007d;
+    border-radius: 5px;
+    font-size: 15px;
+}
+
+body #new-emails:hover{
+    background-color: #0daef3;
+    color: #fff;
+    outline: #0daef3;
 }
